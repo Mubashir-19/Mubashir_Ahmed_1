@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Mubashir_Ahmed_1.Models.DetailsModel>
+
+
+<h2 class="mb-2 text-info display-3">Table</h2>
+<table class="table table-bordered table-hover text-center">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Father Name</th>
+            <th scope="col">Age</th>
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+        <tr>
+            <td class="w-40">@obj.Name</td>
+            <td class="w-40">@obj.FName</td>
+            <td class="w-10">@obj.Age</td>
+            <td>
+                <div class=" w-10 border-0 text-white text-center">
+                    <a asp-controller="Details" asp-route-Id="@obj.Id" asp-action="Edit" class=" btn btn-info"><i class="fa fa-user-edit"></i></a>
+                    <a asp-controller="Details" asp-route-Id="@obj.Id" asp-action="Delete" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-success mb-2 float-right" asp-controller="Details" asp-action="Create">Create</a>
+<a class="btn btn-info mb-2 float-right mr-2" asp-controller="Home">Go Back</a>
+
+
+

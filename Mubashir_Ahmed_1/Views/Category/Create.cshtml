@@ -1,0 +1,27 @@
+﻿@model Mubashir_Ahmed_1.Models.Category 
+
+<form method="post" asp-controller="Category" asp-action="Create">
+    
+    <div class="border p-3">
+        <div class="form-group row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h2 class="text-info pl-3">Create New Item</h2>
+
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2" asp-for="Name"></label>
+            <input class=" col-6 form-control" asp-for="Name" />
+
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2" asp-for="DisplayOrder"></label>
+            <input class=" col-6 form-control" asp-for="DisplayOrder" />
+        </div>
+
+        <div class="col-8 offset-5 row">
+            <input type="submit" value="Create" class="btn btn-primary col-2" />
+            <a asp-action="Index" class="btn btn-danger text-white ml-2">Go Back</a>
+        </div>
+</form>

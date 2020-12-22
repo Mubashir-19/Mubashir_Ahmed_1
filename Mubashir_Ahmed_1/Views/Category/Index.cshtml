@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Mubashir_Ahmed_1.Models.Category>
+
+<h2 style="margin-bottom: -40px" class="text-info display-4">Index</h2>
+
+<div class="text-right mb-2">
+    <a class="btn btn-primary" asp-controller="Category" asp-action="Create">
+        Create New
+    </a>
+    <a class="btn btn-danger mr-2" asp-controller="Category">
+        Go Back
+    </a>
+</div>
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">DisplayOrder</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+
+                    <td>@obj.Id</td>
+                    <td>@obj.Name</td>
+                    <td>@obj.DisplayOrder</td>
+                    <td>
+                        <div class="btn-group">
+                            <a class="btn btn-success">Edit</a>
+                            <a class="btn btn-danger">Delete</a>
+                        </div>
+                    </td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+

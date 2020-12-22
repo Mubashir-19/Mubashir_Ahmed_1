@@ -1,0 +1,39 @@
+﻿@model Mubashir_Ahmed_1.Models.DetailsModel
+
+
+<h2 style="margin-bottom: -40px" class="text-info display-4">Index</h2>
+
+<div class="text-right mb-2">
+
+    <a class="btn btn-danger mr-5" asp-controller="Details" asp-action="Index">
+        Go Back
+    </a>
+</div>
+
+<form class="mt-5" method="post" asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row mt-2 mb-2">
+        <label class="col-2" asp-for="Name"></label>
+        <input class="col-6 form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="row mt-2 mb-2">
+        <label class="col-2" asp-for="FName"></label>
+        <input class="col-6 form-control" asp-for="FName" />
+        <span asp-validation-for="FName" class="text-danger"></span>
+    </div>
+    <div class="row mt-2 mb-2">
+        <label class="col-2" asp-for="Age"></label>
+        <input class="col-6 form-control" asp-for="Age" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+
+    <input class="btn btn-info text-white float-lg-right mr-5" type="submit" value="Create" />
+</form>
+
+@section Scripts {
+
+    @{ <partial name="_ValidationScriptsPartial" /> };
+
+}
